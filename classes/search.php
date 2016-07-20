@@ -297,7 +297,7 @@ class Search
 
         if (!is_array($keywords)) {
             $keywords = self::split_string($keywords, array(
-                'allowable_chars' => '*?',
+                'allowable_chars' => $params['allowable_chars'],
                 'min_word_len' => $params['min_word_len'],
             ));
         }
