@@ -293,6 +293,11 @@ class Search
             'min_word_len' => 2,
             'max_keywords' => 5,
         );
+
+        //If allowable_chars is not in Config, with do a default allowable_chars
+        if(!isset($params['allowable_chars'])) {
+            $params['allowable_chars'] = '*?';
+        }
         $params = array_merge($default_params, $params);
 
         if (!is_array($keywords)) {
