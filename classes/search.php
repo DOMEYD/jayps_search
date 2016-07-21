@@ -290,6 +290,7 @@ class Search
     public static function generate_keywords($keywords, $params)
     {
         $default_params = array(
+            'allowable_chars' => '*?',
             'min_word_len' => 2,
             'max_keywords' => 5,
         );
@@ -297,7 +298,7 @@ class Search
 
         if (!is_array($keywords)) {
             $keywords = self::split_string($keywords, array(
-                'allowable_chars' => '*?',
+                'allowable_chars' => $params['allowable_chars'],
                 'min_word_len' => $params['min_word_len'],
             ));
         }
